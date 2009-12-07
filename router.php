@@ -30,6 +30,7 @@
 class AdminAppRouter extends App
 {
 	protected $crumbName = 'Administration';
+	protected $crumbClass = 'administration';
 	
 	public function __construct()
 	{
@@ -76,9 +77,28 @@ class AdminPage extends Page
 		{
 			if(in_array($route['require'], $perms))
 			{
-				$this->vars['global_nav'][$k] = array('name' => $route['title'], 'link' => $this->request->route . $k . '/', 'class' => $route['linkClass']);
+				$this->vars['global_nav'][$k] = array('name' => $route['title'], 'link' => $this->request->root . $k . '/', 'class' => $route['linkClass']);
 			}
 		}
 		$this->vars['global_nav']['logout'] = array('name' => 'Sign out', 'link' => $this->request->root . 'login/?logout=' . $this->session->nonce, 'class' => 'logout');
+	}
+	
+	protected function setActiveSourceListEntry()
+	{
+		$args = func_get_args();
+		if(!count($args)) return;
+		$first = array_shift($args);
+		if(!isset($this->vars['source_list'][$first])) return;
+		$p =& $this->vars['source_list'][$first];
+		foreach($args as $node)
+		{
+			if(!isset($p['children'][$node]))
+			{
+				break;
+			}
+			$p =& $p['children'][$node];
+		}
+		if(!isset($p['class'])) $p['class'] = '';
+		$p['class'] .= ' active';
 	}
 }

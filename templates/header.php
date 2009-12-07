@@ -44,7 +44,9 @@ if(strpos($colour_scheme, '/') === false) $colour_scheme = 'admin/' . $colour_sc
 						$f = true;
 						foreach($crumb as $trail)
 						{
-							echo ($f ? '' : '<span class="a"> &rarr; </span>') . '<a href="' . _e($trail['link']) . '">' . _e($trail['name']) . '</a>';
+							echo ($f ? '' : '<span class="a"> &rarr; </span>') . '<a href="' . _e($trail['link']) . '"';
+							if(isset($trail['class'])) echo ' class="' . _e($trail['class']) . '"';
+							echo '>' . _e($trail['name']) . '</a>';
 							$f = false;
 						}
 					}

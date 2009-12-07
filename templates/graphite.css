@@ -1,7 +1,7 @@
 /* Eregansu: Graphite colour scheme */
 
 #surround {
-	background: #efefef;
+	background: #fff;
 	color: #000;
 }
 #content h1 {
@@ -18,8 +18,8 @@
 	background-color: #d1d6e2;
 }
 #sidebar dl.source-list > dt {
-	color: #404b59;
-	text-shadow: 1px 1px #fff;
+	color: #708093;
+	text-shadow: 1px 1px #EAEEF2;
 }
 #sidebar dl.source-list > dd, #sidebar dl.source-list li {
 	color: #000;
@@ -102,4 +102,16 @@ div.tabs > ul > li.active > a {
 }
 div.tabs > div {
 	background: #efefef;
+}
+
+
+div.item-list > table {
+	border: solid #ddd 1px;
+	background: #f7f7f7;
+}
+div.item-list > table > tbody > tr.even {
+	background: #efefef;
+}
+div.item-list > table > tbody > tr:last-child {
+	border-bottom: solid #ddd 1px;
 }

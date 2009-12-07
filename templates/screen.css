@@ -138,6 +138,7 @@ table td, table th {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	white-space: nowrap;
 }
 #sidebar dl.source-list .branch {
 	position: relative;
@@ -344,6 +345,7 @@ form > div.tabs {
 	z-index: 500;
  	border-top: solid #444 1px;
 	background: #bcbcbc;
+	min-height: 16px;
 }
 #crumb p.trail span.leader {
 	display: none;
@@ -351,6 +353,9 @@ form > div.tabs {
 #crumb p.trail a {
 	text-decoration: none;
 	font-size: 85%;
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	display: inline-block;
 }
 #crumb p.trail .a {
 	display: inline-block;
@@ -390,6 +395,13 @@ form > div.tabs {
 }
 
 /* Item list tables */
+div.item-list-container {
+	position: absolute;
+	top: 4em;
+	left: 32px;
+	right: 32px;
+	bottom: 32px;
+}
 div.item-list {
 	position: absolute;
 	top: 0;
@@ -403,11 +415,16 @@ div.item-list > h2 { display: none; }
 div.item-list > table {
 	font-size: 85%;
 	width: 100%;
+	margin: 0 !important;	
 }
 div.item-list > table > thead {
 	background: #f8f8f8;
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#f3f3f3), to(#e9e9e9));
 	border-bottom: solid #bcbcbc 1px;
+}
+div.item-list > table > tbody {
+	max-height: 100%;
+	overflow: auto;
 }
 div.item-list > table > thead > tr > td, div.item-list > table > thead > tr > th {
 	border-right: solid #a5a6a5 1px;
@@ -440,3 +457,8 @@ div.item-list td.check {
 #navigation li.media.active>a { background-position: -1048px 50%; }
 #navigation li.logout>a { background-position: -96px 50%; }
 #navigation li.logout.active>a { background-position: -1096px 50%; }
+
+#crumb p.trail a.administration {
+	padding-left: 20px;
+	background-image: url('images/wrench.png');
+}
