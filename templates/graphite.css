@@ -4,9 +4,15 @@
 	background: #fff;
 	color: #000;
 }
-#content h1 {
+/* #content h1 {
 	color: #fff;
 	text-shadow: -1px -1px 1px #222;
+} */
+.content-section #content h1 {
+	color: #444;
+}
+#content h2 {
+	color: #666;
 }
 #sidebar {
 	background-color: #d8dadc;
@@ -104,14 +110,42 @@ div.tabs > div {
 	background: #efefef;
 }
 
-
+div.item-list {
+	background: #fff;
+}
+div.tabs div.item-list {
+	background: #efefef;
+}
 div.item-list > table {
 	border: solid #ddd 1px;
 	background: #f7f7f7;
 }
+div.item-list > table > thead {
+	background: #f8f8f8;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#f3f3f3), to(#e9e9e9));
+	border-bottom: solid #bcbcbc 1px;
+}
+div.item-list > table > thead > tr > td, div.item-list > table > thead > tr > th {
+	border-right: solid #a5a6a5 1px;
+	color: #000;
+	text-shadow: 1px 1px 1px #fff;
+}
+/* div.item-list > table > tbody > tr.even { background: #f1f5fa; } */
+
 div.item-list > table > tbody > tr.even {
 	background: #efefef;
 }
+div.item-list > table > tbody > tr > td, div.item-list > table > tbody > tr > th {
+	border-right: solid #dddddd 1px;
+}
 div.item-list > table > tbody > tr:last-child {
-	border-bottom: solid #ddd 1px;
+	border-bottom: solid #dddddd 1px;
+}
+
+fieldset.actions {
+	background-color: #32394b;
+	background-image: -webkit-gradient(linear, 0 0, 0 20%, from(#151921), to(#32394b));
+}
+body.crumb fieldset.actions {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#151921), color-stop(20%,#32394b), color-stop(90%,#32394b),to(#151921));
 }

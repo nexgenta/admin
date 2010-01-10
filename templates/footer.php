@@ -95,3 +95,5 @@ else if(isset($site_nav))
 }
 ?>
 	</div>	
+	</body>
+</html>

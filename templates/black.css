@@ -1,44 +1,44 @@
 /* Eregansu: Dark colour scheme */
 
-body.dark a:link, body.dark a:visited {
+a:link, a:visited {
 	color: #5782b7;
 }
-body.dark #surround {
+#surround {
 	background-color: #262626;
 	color: #cdcdcd;
 }
-body.dark #content h1 {
+#content h1 {
 	color: #fff;
 }
-body.dark #content h2 {
+#content h2 {
 	color: #fff;
 	border-bottom: solid #373737 1px;
 }
-body.dark #content h2 a:link, body.dark #content h2 a:visited {
+#content h2 a:link, #content h2 a:visited {
 	color: #fff;
 }
-body.dark #sidebar {
+#sidebar {
 	border-right: solid #000 1px;
 	background: #151515;	
 }
-body.dark #sidebar dl.source-list {
+#sidebar dl.source-list {
 	background-color: #151515;
 }
-body.dark #sidebar dl.source-list > dt {
+#sidebar dl.source-list > dt {
 	color: #464646;
 	text-shadow: 1px 1px #000;
 }
-body.dark #sidebar dl.source-list > dd {
+#sidebar dl.source-list > dd {
 	color: #d4d4d4;
 	border-top: solid #151515 1px;
 }
-body.dark #sidebar dl.source-list > dd.active {
+#sidebar dl.source-list > dd.active {
 	background-color: #18222f;
 }
-body.dark #sidebar ul.menu > li > a:link, body.dark #sidebar ul.menu > li > a:visited {
+#sidebar ul.menu > li > a:link, #sidebar ul.menu > li > a:visited {
 	color: #aaa;
 }
-body.dark #sidebar ul.menu > li {
+#sidebar ul.menu > li {
 	border-top: solid #373737 1px;
 	border-left: solid #373737 1px;	
 	border-bottom: solid #000 1px;
@@ -46,57 +46,63 @@ body.dark #sidebar ul.menu > li {
 	background-color: #2d2d2d;
 	-webkit-border-radius: 2px 2px;	
 }
-body.dark #sidebar ul.menu > li.active {
+#sidebar ul.menu > li.active {
 	background-color: #18222f;
 }
-body.dark #sidebar ul.menu > li.active > a:link, body.dark #sidebar ul.menu > li.active > a:visited {
+#sidebar ul.menu > li.active > a:link, #sidebar ul.menu > li.active > a:visited {
 	color: #dcdcdc;
 }
-body.dark #navigation {
+#navigation {
 	border-top: solid #373737 1px;
 	border-bottom: solid #0f0f0f 1px;
 	background: #222;
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#2d2d2d), to(#202020));
 }
-body.dark #crumb p.trail {
+#crumb p.trail {
 	background: #151515;
 	border-top: solid #000 1px;
 	color: #666;
 }
-body.dark #crumb p.trail a {
+#crumb p.trail a {
 	color: #d4d4d4;
 }
-body.dark table {
+table {
 	border: solid #000 1px;
 	background-color: #1f1f1f;
 }
-body.dark table > thead, body.dark table > tfoot {
+table > thead, table > tfoot {
 	background-color: #373737;
 }
-body.dark table > thead > tr > th {
+table > thead > tr > th {
 	color: #fff;
 }
-body.dark table.item-list > tbody > tr:hover {
+/* table.item-list > tbody > tr:hover {
 	background-color: #2d2d2d;
+} */
+div.item-list > table > tbody > tr.even {
+	background: #151515;
 }
-body.dark table > thead a:link, body.dark table > thead a:visited, body.dark table > tfoot a:link, body.dark table > tfoot a:visited {
+table > thead a:link, table > thead a:visited, table > tfoot a:link, table > tfoot a:visited {
 	color: #d8dadc;
 	text-decoration: none;
 }
 
-body.dark div.tabs > ul {
+div.tabs > ul {
 	background-color: #151515;
 	background-image: -webkit-gradient(linear, 0 70%, 0 100%, from(#151515), to(#000));
 }
-body.dark div.tabs > ul > li > a {
+body.crumb fieldset.actions {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000000), color-stop(20%,#151515), color-stop(90%,#151515),to(#101010));
+}
+div.tabs > ul > li > a {
 	color: #e4e5e6 !important;
 	text-shadow: 1px 1px #000;
 	background: #18222f;	
 	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.75);
 }
-body.dark div.tabs > ul > li.active > a {
+div.tabs > ul > li.active > a {
 	background: #262626;
 }
-body.dark div.tabs > div {
+div.tabs > div {
 	background: #262626;
 }

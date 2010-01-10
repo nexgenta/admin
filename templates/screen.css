@@ -68,6 +68,7 @@ table td, table th {
 	height: 3em;
 	line-height: 3em;
 	text-indent: -11000em;
+	cursor: default;
 }
 /*#navigation > ul#toolbar li:first-child a {
 	border-left: solid #444 1px;
@@ -108,6 +109,7 @@ table td, table th {
 	display: block;
 	line-height: 2em;
 	padding-left: 32px;
+	cursor: default;
 }
 #sidebar ul.menu > li.active {
 	border: none !important;
@@ -139,6 +141,8 @@ table td, table th {
 	padding: 0;
 	list-style: none;
 	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
 }
 #sidebar dl.source-list .branch {
 	position: relative;
@@ -153,6 +157,7 @@ table td, table th {
 	background-repeat: no-repeat;	
 	line-height: 2em;
 	text-indent: 20px;
+	cursor: default;	
 }
 #sidebar dl.source-list > dd > ul > li > a {
 	background-position: 48px 50%;
@@ -212,12 +217,16 @@ body.crumb #surround {
 #content h1 {
 	display: none;
 }
-#content h2 {
-	font-family: 'Myriad Pro', 'Lucida Grande', 'Gill Sans', 'Helvetica',;
-	font-size: 120%;
+.content-section #content h1, #content h2 {
+	display: block;
+/*	font-family: 'Myriad Pro', 'Lucida Grande', 'Gill Sans', 'Helvetica',; */
+	font-size: 123.1%;
 	font-weight: normal;
 	margin: 0 0 0.75em 0;
 	padding-bottom: 0.25em;
+}
+.content-section #content h1 {
+	font-size: 138.5%;
 }
 #content h2 a:link, #content h2 a:visited {
 	text-decoration: none;
@@ -228,15 +237,10 @@ fieldset.actions {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: #32394b;
-	background-image: -webkit-gradient(linear, 0 0, 0 20%, from(#151921), to(#32394b));
 	z-index: 80;
 	height: 4em;
 	line-height: 4em;
 	text-align: right;
-}
-body.crumb fieldset.actions {
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#151921), color-stop(20%,#32394b), color-stop(90%,#32394b),to(#151921));
 }
 div.field {
 	margin: 0 1em 0.75em 1em;
@@ -304,6 +308,7 @@ div.tabs > ul > li > a {
 	-moz-border-radius-topleft: 8px;
 	-moz-border-radius-topright: 8px;
 	position: relative;
+	cursor: default;
 }
 div.tabs > ul > li.active > a {
 	margin-left: -4px;
@@ -356,6 +361,7 @@ form > div.tabs {
 	background-repeat: no-repeat;
 	background-position: 0 50%;
 	display: inline-block;
+	cursor: default;
 }
 #crumb p.trail .a {
 	display: inline-block;
@@ -392,6 +398,7 @@ form > div.tabs {
 	color: #d4d4d4;
 	text-decoration: none;
 	font-size: 85%;
+	cursor: default;	
 }
 
 /* Item list tables */
@@ -409,7 +416,6 @@ div.item-list {
 	right: 0;
 	bottom: 0;
 	overflow: auto;
-	background: #fff;
 }
 div.item-list > h2 { display: none; }
 div.item-list > table {
@@ -417,29 +423,19 @@ div.item-list > table {
 	width: 100%;
 	margin: 0 !important;	
 }
-div.item-list > table > thead {
-	background: #f8f8f8;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#f3f3f3), to(#e9e9e9));
-	border-bottom: solid #bcbcbc 1px;
-}
 div.item-list > table > tbody {
 	max-height: 100%;
 	overflow: auto;
 }
 div.item-list > table > thead > tr > td, div.item-list > table > thead > tr > th {
-	border-right: solid #a5a6a5 1px;
 	padding: 0 4px 0 4px;
 	line-height: 1.8em;
 	font-weight: bold;
-	color: #000;
-	text-shadow: 1px 1px 1px #fff;
 } 
 div.item-list > table > thead > tr > td:last-child, div.item-list > table > thead > tr > th:last-child {
 	border-right: none;
 }
-div.item-list > table > tbody > tr.even { background: #f1f5fa; }
 div.item-list > table > tbody > tr > td, div.item-list > table > tbody > tr > th {
-	border-right: solid #dddddd 1px;
 	padding: 0 4px 0 4px;
 	line-height: 1.8em;
 } 
@@ -453,8 +449,16 @@ div.item-list td.check {
 
 #navigation li.add>a { background-position: 0 50%; }
 #navigation li.add.active>a { background-position: 1000px 50%; }
+#navigation li.home>a { background-position: -144px 50%; }
+#navigation li.home.active>a { background-position: -1144px 50%; }
+#navigation li.clusters>a { background-position: -192px 50%; }
+#navigation li.clusters.active>a { background-position: -1192px 50%; }
+#navigation li.databases>a { background-position: -240px 50%; }
+#navigation li.databases.active>a { background-position: -1240px 50%; }
 #navigation li.media>a { background-position: -48px 50%; }
 #navigation li.media.active>a { background-position: -1048px 50%; }
+#navigation li.dns>a { background-position: -288px 50%; }
+#navigation li.dns.active>a { background-position: -1288px 50%; }
 #navigation li.logout>a { background-position: -96px 50%; }
 #navigation li.logout.active>a { background-position: -1096px 50%; }
 
