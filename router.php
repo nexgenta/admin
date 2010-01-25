@@ -31,7 +31,7 @@ class AdminAppRouter extends App
 {
 	protected $crumbName = 'Administration';
 	protected $crumbClass = 'administration';
-	
+
 	public function __construct()
 	{
 		global $ADMIN_ROUTES;
@@ -62,6 +62,8 @@ class AdminRedirect extends Redirect
 
 class AdminPage extends Page
 {
+	protected $activeSourceListEntry;
+	
 	protected function assignTemplate()
 	{
 		global $ADMIN_ROUTES;
@@ -85,6 +87,12 @@ class AdminPage extends Page
 	
 	protected function setActiveSourceListEntry()
 	{
+		$nothing = null;
+		if($this->activeSourceListEntry)
+		{
+			$this->activeSourceListEntry['class'] = str_replace(' active ', ' ', $this->activeSourceListEntry['class'] . ' ');
+			$this->activeSourceListEntry =& $nothing;
+		}
 		$args = func_get_args();
 		if(!count($args)) return;
 		$first = array_shift($args);
@@ -100,5 +108,6 @@ class AdminPage extends Page
 		}
 		if(!isset($p['class'])) $p['class'] = '';
 		$p['class'] .= ' active';
+		$this->activeSourceListEntry =& $p;
 	}
 }
