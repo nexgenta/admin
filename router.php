@@ -42,22 +42,37 @@ class AdminAppRouter extends App
 		{
 			$this->routes['__NONE__'] = array('class' => 'AdminRedirect');
 		}
+		if(!isset($this->routes['__DEFAULT__']))
+		{
+			$this->routes['__DEFAULT__'] = array('class' => 'AdminRedirect');
+		}
 	}
 }
 
 class AdminRedirect extends Redirect
 {
- 	public function __construct()
- 	{
- 		global $ADMIN_ROUTES;
- 		
- 		parent::__construct();
-		foreach($ADMIN_ROUTES as $k => $route)
+	public function process(Request $req)
+	{
+		global $ADMIN_ROUTES;
+	
+		$perms = array();
+		if(isset($this->session->user) && isset($this->session->user['perms']))
 		{
-			$this->target = '/' . $k . '/';
-			break;
+			$perms = $this->session->user['perms'];
 		}
- 	}
+		foreach($ADMIN_ROUTES as $k => $target)
+		{
+			if(substr($k, 0, 1) == '_') continue;
+			if(!isset($route['require']) || in_array($route['require'], $perms))
+			{
+				$this->target = '/' . $k . '/';
+				parent::process($req);
+				return;
+			}
+		}
+		$this->target = '/';
+		$this->useBase = false;
+	}
 }
 
 class AdminPage extends Page
@@ -77,7 +92,7 @@ class AdminPage extends Page
 		$this->vars['global_nav'] = array();
 		foreach($ADMIN_ROUTES as $k => $route)
 		{
-			if(in_array($route['require'], $perms))
+			if(!isset($route['require']) || in_array($route['require'], $perms))
 			{
 				$this->vars['global_nav'][$k] = array('name' => $route['title'], 'link' => $this->request->root . $k . '/', 'class' => $route['linkClass']);
 			}
