@@ -27,6 +27,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+uses('page');
+
 class AdminAppRouter extends App
 {
 	protected $crumbName = 'Administration';
