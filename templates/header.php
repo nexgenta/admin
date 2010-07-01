@@ -1,5 +1,7 @@
 <?php
 
+if(defined('ABSPATH')) return;
+
 if(!isset($page_title)) $page_title = 'Administration';
 if(!isset($page_type)) $page_type = '';
 if(!isset($colour_scheme)) $colour_scheme = 'graphite';

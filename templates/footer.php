@@ -1,3 +1,9 @@
+<?php
+
+if(defined('ABSPATH')) return;
+
+?>
+
 		</div>
 	</div>
 	<div id="navigation">
